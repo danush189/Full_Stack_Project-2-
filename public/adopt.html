@@ -96,11 +96,11 @@
         function handleSearch() {
             var searchQuery = searchInput.value.toLowerCase();
 
-            if (searchQuery === "cats") {
+            if (searchQuery === "cats" || searchQuery=="cat") {
                 window.location.href = "./cats.html";
-            } else if (searchQuery === "dogs") {
+            } else if (searchQuery === "dogs" || searchQuery=="dog") {
                 window.location.href = "./dog.html";
-            } else if (searchQuery === "rabbits" || searchQuery === "birds" || searchQuery === "hamsters" || searchQuery === "turtle") {
+            } else if (searchQuery === "rabbits" || searchQuery === "birds" || searchQuery === "hamsters" || searchQuery === "turtles" ||searchQuery === "rabbit" || searchQuery === "bird" || searchQuery === "hamster" || searchQuery === "turtle") {
                 window.location.href = "./others.html";
             } else {
                 searchResult.style.display = "block";
