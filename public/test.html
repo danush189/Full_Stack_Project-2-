@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <script>
+        const targetNumber = 10000; // Specify the target number
+        let currentNumber = 0;
+
+        function generateRandomNumber() {
+            currentNumber = Math.floor(Math.random() * targetNumber) + 1;
+            document.getElementById('random-number').textContent = currentNumber;
+        }
+
+        // Start generating numbers immediately upon page load
+        const intervalId = setInterval(generateRandomNumber, 80);
+
+        // Stop generating numbers after 10 seconds
+        setTimeout(() => {
+            clearInterval(intervalId); // Stop the interval
+            document.getElementById('random-number').textContent = targetNumber; // Display the specified number
+        }, 2000); // 10 seconds
+    </script>
+</head>
+<body>
+    <h1>Random Number Generator</h1>
+    <p>Random number: <span id="random-number"></span></p>
+</body>
+</html>

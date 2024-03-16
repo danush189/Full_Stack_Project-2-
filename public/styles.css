@@ -1,0 +1,282 @@
+@font-face {
+  font-family: Marykate;
+  src: url("fonts/FontsFree-Net-Marykate-Regular.ttf");
+}
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+*{
+  margin:0;
+  scroll-behavior: smooth;
+  max-width: 100vw;
+}
+.header{
+  background-color: #36157C;
+  width:100%;
+  height:100px;
+  margin: 0%;
+  padding: 0%;
+}
+#volunteer-link{
+  width:100%;
+  height:80px;
+}
+#volunteer-link>p{
+  font-family: Marykate;
+  font-size: 3em;
+  text-align: center;
+  padding: 0.33em;
+}
+#adoptdrop{
+display: inline-block;
+}
+#search{
+float: right;
+}
+#logo{
+ height: fit-content;
+ padding-top:25px;
+ padding-left: 15px;
+ float:left
+}
+#nav1{
+  list-style: none;
+  display:flex;
+}
+li{
+  padding-right:10px;
+  margin-top:5px;
+}
+#homebutton{
+  width: 75px;
+  height: auto;
+  margin-top:10px;
+  float:right;
+  margin-right: 10px;
+}
+#donatebutton{
+  width: 60px;
+  height: auto;
+  margin-top: 10px;
+}
+.donate{
+  margin-left: 27%;
+  display: flex;
+}
+.carousel{
+  background-color: #e9d7eb;
+  width:100%;
+  height:60rem;
+}
+.carousel>img{
+  position: absolute;
+opacity: 0;
+animation: display 6s infinite; 
+width:100%;
+height:60rem;
+display:block;
+object-fit: contain;
+}
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.description{
+  background-color:#e9d7eb;
+  width:100%;
+  height:fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.description>p{
+  font-family: Marykate;
+  text-align: center;
+}
+.sh-name{
+  font-size: 5rem;
+  color: #36157C;
+}
+.sh-address{
+  padding: 1rem;
+  font-size: 3rem;
+}
+#vol-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Marykate;
+  font-size: 2rem;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+label {
+  width: 100px;
+  padding-right: 10px;
+}
+
+input,select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 10px;
+  background: #ddd0e2;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button{
+  background-color:#36157C;
+  font-family: Marykate;
+  align-items: center;
+  font-size: 1.3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;}
+
+  .column{
+    flex:50%;
+    width: 50%;
+    float:left;
+    flex-direction: column;
+  }
+  .grid-container {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-item {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  #vol-submit{
+    display: block;
+    margin-top: 40px;
+
+  }
+  .container>.text{
+    font-family: Marykate;
+    font-size: 15rem;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 50px;
+    font-family: Marykate;
+  }
+
+  .adopt-dropdown {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .adopt-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-size: 30px;
+  }
+
+  .adopt-dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .adopt-dropdown-content a img {
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+  }
+
+  .adopt-dropdown:hover .adopt-dropdown-content {
+    display: block;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    width: 300px; /* Adjust the width as needed */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .search-bar input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .search-bar input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .search-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: none;
+  }
+  .searching{
+    float: right;
+    font-family: Marykate;
+    font-size: 50px;
+    display: flex;
+  }
+  .container>.t1{
+    font-family: Marykate;
+  }

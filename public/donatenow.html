@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Donate now page</title>
+<style>
+    body  {
+        margin: 0%;}
+  /* Container for the image and text */
+  .container {
+    position: relative;
+    width:100%;
+  }
+
+  /* Dark overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+
+  /* Text style */
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+ 
+ .container> img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src="logos/logo_main.png" alt="loading" id="logo">
+        <a href="index.html">
+        <img src="logos/home.png" alt="loading" id="homebutton">
+        </a>
+    </div>
+    <div id="volunteer-link" class="donate">
+        <p>Help out by donating!    Click here to donate-></p>
+    
+        <a href="https://forms.gle/d3HzneoWTPvWL2Gx8"><img src="logos/donate.png" alt="loading" id="donatebutton"></a>
+    </div>
+<div class="container">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQV3gWj3M_hl27C1f8rLwvlU6E7QVEM-wpA&usqp=CAU" alt="Your Image">
+  <div class="overlay"></div>
+  <div class="text">Donate Now</div>
+</div>
+
+</body>
+</html>

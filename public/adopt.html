@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .container {
+      position: relative;
+      width:100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+    }
+  
+    .t1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(73, 20, 97);
+      text-align: center;
+    }
+  
+   
+   .container> img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container>.t1{
+      font-size: 3rem;
+    }
+    .cutie>img{
+      width: 100vw;
+      height: auto;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src="logos/logo_main.png" alt="loading" id="logo">
+        <a href="index.html"> 
+        <img src="logos/home.png" alt="loading" id="homebutton">
+        </a>
+    </div>
+    </div>
+    <div class="navbar">
+      <div class="adopt-dropdown" id="adopt-dropdown">
+        Adopt
+        <div class="adopt-dropdown-content">
+          <a href="dog.html"><img src="logos/dog.png" alt="loading" id="donatebutton">Dogs</a>
+          <a href="cats.html"><img src="logos/cat.png" alt="loading" id="donatebutton">Cats</a>
+          <a href="others.html"><img src="logos/other.png" alt="loading" id="donatebutton">Other</a>
+        </div>
+      </div>
+      <div class="searching">
+        <p style="margin-right:10px;">Search</p>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for a pet">
+            <button type="button" id="search-button" style="background-color: aliceblue; width: 20px; margin: 0%; padding: 0%;">
+                <img src="logos/search.png" class="search-logo" alt="Search">
+            </button>
+        </div>
+        <div id="search-result" style="display: none; margin-top: 10px; color: red;">Not found</div>
+    </div>
+    </div>
+    <div class="container">
+      <img src="images/bgadopt.jpg" alt="Your Image">
+      <div class="overlay"></div>
+      <div class="t1"><h1>Adoption Process</h1><br>
+        Research: Begin by researching different types of pets to find one that suits your lifestyle. Consider factors like size, temperament, and activity level to ensure a good match.
+        <br><br><br>Visit Shelters: Visit local animal shelters or rescue organizations to meet pets available for adoption. Spend time interacting with them to see which one you connect with best.
+        <br><br><br>Once you've found a pet you're interested in, inquire about the adoption process. This typically involves filling out an application, meeting with adoption counselors, and possibly undergoing a home visit to ensure the pet's safety and well-being.
+      </div>
+    </div>
+    <div class="cutie">
+      <img src="images/adoptimage.png" alt="ahhaa">
+    </div>
+    <div id="volunteer-link">
+      <p><a href="#logo">ADOPT A BUDDY TODAY!</a></p>
+  </div>
+  <script>
+    const searchInput = document.getElementById('search-input');
+        const searchResult = document.getElementById('search-result');
+
+        
+        function handleSearch() {
+            var searchQuery = searchInput.value.toLowerCase();
+
+            if (searchQuery === "cats") {
+                window.location.href = "./cats.html";
+            } else if (searchQuery === "dogs") {
+                window.location.href = "./dog.html";
+            } else if (searchQuery === "rabbits" || searchQuery === "birds" || searchQuery === "hamsters" || searchQuery === "turtle") {
+                window.location.href = "./others.html";
+            } else {
+                searchResult.style.display = "block";
+                setTimeout(() => {
+                    searchResult.style.display = "none";
+                    searchInput.value = ""; 
+                }, 2000); 
+            }
+        }
+ 
+        document.getElementById('search-button').addEventListener('click', handleSearch);
+        
+        searchInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                handleSearch();
+            }
+        });
+  </script>
+</body>
+</html>

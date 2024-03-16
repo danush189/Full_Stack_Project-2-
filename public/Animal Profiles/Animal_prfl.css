@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat:300,400,700,800|Open+Sans:300');
+@font-face {
+  font-family: Marykate;
+  src: url("FontsFree-Net-Marykate-Regular.ttf");
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.header{
+  background-color: #36157C;
+  width:100%;
+  height:100px;
+  margin: 0%;
+  padding: 0%;
+}
+#logo{
+ height: fit-content;
+ padding-top:25px;
+ padding-left: 15px;
+ float:left
+}
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #ca80db,
+    #b76dde,
+    #ab51f0,
+    #9181d1,
+    #d1d7eb
+  );
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#homebutton{
+  width: 75px;
+  height: auto;
+  margin-top:10px;
+  float:right;
+  margin-right: 10px;
+}
+.back-button {
+  display: inline-block;
+  padding-right: 30px;
+  background-color: none;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 25px;
+  font-family: "Marykate";
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+main{
+  max-width: 1080px;
+  margin: 5% auto;
+}
+h3{
+    flex: 0 1 200px;
+    text-align: left;
+    margin: 0;
+    color: #252525;
+    font-family: "Marykate";
+    font-weight: 300;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+.card{
+  box-shadow: 0 6px 6px rgba(#000, 0.3);
+  transition: 200ms;
+  background: #fff;
+  
+  .card__title{
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    
+    h3{
+      flex: 0 1 200px;
+      text-align: right;
+      margin: 0;
+      color: #252525;
+      font-family: "Marykate";
+      font-weight: 400;
+      font-size: 40px;
+    }
+    
+    .icon{
+      flex: 1 0 10px;
+      background: #58129d;
+      color: #fff;
+      padding: 10px 10px;
+      transition: 200ms;
+      
+      > a{
+        color: #fff;
+      }
+      
+      &:hover{
+        background: #252525;
+      }
+    }
+  }
+  
+  .card__body{
+    padding: 0 40px;
+    display: flex;
+    flex-flow: row no-wrap;
+    margin-bottom: 25px;
+    
+    > .half{
+      box-sizing: border-box;
+      padding: 0 15px;
+      flex: 1 0 50%;
+    }
+    
+    .featured_text{
+      h1{
+        margin: 0;
+        padding: 0;
+        font-weight: 800;
+        font-family: "Marykate";
+        font-size: 64px;
+        line-height: 50px;
+        color: #181e28;
+      }
+      
+      p{
+        margin: 0;
+        padding: 0;
+        
+        &.sub{
+          font-family: "Montserrat", sans-serif;
+          font-size: 26px;
+          text-transform: uppercase;
+          color: #686e77;
+          font-weight: 300;
+          margin-bottom: 5px;
+        }
+        
+        &.price{
+          font-family: "Montserrat", sans-serif;
+          color: #252525;
+          font-size: 25px;
+          font-weight: 400;
+        }
+      }
+    }
+    
+    .image{
+      padding-top: 30px;
+      width: 100%;
+
+      
+      img{
+        display: block;
+        width: 400px;
+        height: auto;
+      }
+    }
+    
+    .description{
+      margin-bottom: 25px;
+      
+      p{
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        line-height: 27px;
+        font-size: 16px;
+        color: #555;
+      }
+    }
+    
+    span.stock{
+      font-family: "Marykate";
+      font-weight: 800;
+      font-size: 30px;
+      color: #27104e;
+    }
+      
+      > span{
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        margin-left: 5px;
+        color: #555;
+      }
+    }
+  }
+  
+  .card__footer{
+    padding: 30px 40px;
+    display: flex;
+    flex-flow: row no-wrap;
+    align-items: center;
+    position: relative;
+    
+    &::before{
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 40px;
+      width: calc(100% - 40px);
+      height: 3px;
+      background: #115dd8;
+      background: linear-gradient(to right, #7111d8 20%,#dcb2e1 40%,#fbf9f9 60%,#fffefe 100%);
+    }
+    
+    .recommend{
+      flex: 1 0 10px;
+      
+      p{
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        color: #555;
+      }
+     
+      h3{
+        margin: 0;
+        font-size: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #115dd8;
+      }
+    }
+    
+    .action{
+      button{
+        cursor: pointer;
+        border: 1px solid #4f1688;
+        padding: 14px 30px;
+        border-radius: 200px;
+        color: #fff;
+        background: #4f1688;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        transition: 200ms;
+        
+        &:hover{
+          background: #fff;
+          color: #115dd8;
+        }
+      }
+    }
+  }

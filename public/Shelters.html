@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logos/logo_main.png" alt="loading" id="logo">
+        <a href="index.html">
+        <img src="logos/home.png" alt="loading" id="homebutton">
+        </a>
+    </div>
+    <div id="volunteer-link">
+        <p><a href="#vol-form">VOLUNTEER AT A SHELTER NEAR YOU!</a></p>
+    </div>
+    
+    <div class="carousel">
+      <img src="images/shelter2.png" alt="loading" class="pic">
+      <img src="images/shelter 3.png" alt="loading" class="pic">
+      <img src="images/shelter1.png" alt="loading" class="pic">
+    </div>
+    <div class="description">
+        <p class="sh-name">LOVE FOR FORGOTTEN</p>
+        <p class="sh-address">80 Feet Road, Royal County, 1st Phase,</p>
+        <p class="sh-address">Kothnur,Karnataka 560083</p>
+    </div>
+    <div class="carousel">
+        <img src="images/shelter4.png" alt="loading" class="pic"> 
+        <img src="images/shelters5.png" alt="loading" class="pic">
+        <img src="images/shelters6.png" alt="loading" class="pic">
+
+    </div>
+    <div class="description">
+        <p class="sh-name">SARVOHAM ANIMAL FOUNDATION</p>
+        <p class="sh-address">No.12, Aishwarya Layout,Jambusavari Dinne Main Rd</p>
+        <p class="sh-address">8th Phase, J. P. Nagar, Bengaluru, Kothnur, Karnataka 560083</p>
+    </div>
+    <div class="carousel">
+        <img src="images/shelters7.png" alt="loading" class="pic">
+        <img src="images/shelters8.png" alt="loading" class="pic">
+        <img src="images/shelters9.png" alt="loading" class="pic">
+
+    </div>
+    <div class="description">
+        <p class="sh-name">KARUNA ANIMAL FOUNDATION</p>
+        <p class="sh-address">Vaterinary College Campus, Near-BBMP Help Center,</p>
+        <p class="sh-address">Hebbal, Bengaluru, Karnataka 560024</p>
+    </div>
+    <div id="vol-form">
+        <form action="http://localhost:3000/submit-form" method="post" onsubmit="submitForm(event)">
+          <div class="form-group">
+            <label for="firstName">First Name:</label> 
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+            
+            <label for="lastName">Last Name:</label> 
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Email:</label> 
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="contact">Contact:</label> 
+            <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+              <option value="" selected disabled>Select a preferred location</option>
+              <option value="city1">Love For Forgotten</option>
+              <option value="city2">Sarvoham Animal Foundation</option>
+              <option value="city3">Karuna Animal Foundation</option>
+            </select>
+            
+            <label for="duration">Duration:</label>
+            <select id="duration" name="duration">
+              <option value="" selected disabled>Select duration</option>
+              <option value="1-week">1 Week</option>
+              <option value="2-weeks">2 Weeks</option>
+              <option value="1-month">1 Month</option>
+            </select>
+          </div>
+          <center>
+            <button type="submit">SIGN UP</button>
+          </center>
+        </form>
+      </div>
+      <script>
+        function submitForm(event) {
+          event.preventDefault(); 
+          const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            contact: document.getElementById('contact').value,
+            location: document.getElementById('location').value,
+            duration: document.getElementById('duration').value
+          };
+      
+          if (!validateEmail(formData.email)) {
+            alert("Invalid email format");
+            return;
+          }
+      
+          if (!validateContact(formData.contact)) {
+            alert("Invalid contact details");
+            return;
+          }
+      
+          fetch('/submit-form', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            alert("Sign-up Successful");
+            clearForm();
+          })
+          .catch(error => console.error('Error:', error));
+        }
+      
+        function clearForm() {
+          document.getElementById('firstName').value = '';
+          document.getElementById('lastName').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('contact').value = '';
+          document.getElementById('location').value = '';
+          document.getElementById('duration').value = '';
+        }
+      
+        function validateEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+      
+        function validateContact(contact) {
+          return /^\d{10}$/.test(contact);
+        }
+      </script>
+      
+            
+</body>
+</html>
