@@ -20,9 +20,23 @@
             <li><a href="Shelters.html">Shelters</a></li>
         </ul>
             <ul id="navend">
-                <li><a href="Signup.html">Sign Out</a></li>
+                <li><a id="signout" href="index.html">Sign Out</a></li>
             </ul>
         </div>
+        <script>
+            document.getElementById('signout').addEventListener('click', function(event) {
+                
+              event.preventDefault(); // Prevent the default behavior of the link
+              
+              // Display the message
+              alert("Signed out Successfully.");
+        
+              // Redirect after some time
+              setTimeout(function() {
+                window.location.href = event.target.href; // Redirect to the link's href
+              }, 1000); // Adjust the delay time (in milliseconds) as needed
+            });
+          </script>
     </div>
     <div class="section1">
     <img src="images/dogHeader.png" alt="loading image" id="dogHeader">
