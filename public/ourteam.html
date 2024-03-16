@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <link rel="stylesheet" href="stylesanimal.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/fevicol.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anaheim&display=swap" rel="stylesheet">
+    <style>
+
+:root {
+  --br: 20px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  text-align: center;
+}
+body{
+  background-image: linear-gradient(
+    to right bottom,
+    #ca80db,
+    #b76dde,
+    #ab51f0,
+    #9181d1,
+    #d1d7eb
+  );
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  font-family:'Anaheim', sans-serif ;
+}
+.row {
+  display: flex;
+  gap: 50px;
+ justify-content: center;
+ margin-top: 60px;
+ transform: scale(1.2);
+ 
+}
+.card {
+  width: 240px;
+  background: #fff;
+  padding: 15px;
+  border-radius: var(--br);
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 0px 3px 10px 5px #e9b8e4;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--bc, #000);
+}
+h1 {
+  margin: 10px;
+  margin-bottom: 0%;
+  font-size: 60px;
+  font-weight:600 ;
+  padding:0% ;
+}
+h2 {
+  margin: 15px 0 5px;
+  font-weight: 800;
+}
+.card .role {
+  font-size: 80%;
+  color: #444;
+  margin-bottom: 20px;
+}
+.card a {
+  background: var(--btn, #000);
+  color: #fff;
+  padding: 10px 15px;
+  width: 100%;
+  display: block;
+  border-radius: var(--br);
+  text-decoration: none;
+  margin-top: 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logos/logo_main.png" alt="loading" id="logo">
+    
+        <div class="button-container">
+        <a href="#" class="back-button" onclick="goBack()">
+          &#8592; BACK
+        </a>
+        <script>
+        function goBack() {
+          window.history.back();
+        }
+        </script>
+    
+        <a href="index2.html">
+        <img src="logos/home.png" alt="loading" id="homebutton">
+        </a>
+      </div>
+    </div>
+    <div>
+    <div class="container">
+      <h1>Our Team</h1>
+      <div class="row">
+        <div class="card" style="--bc: #3e096c;--btn: #3e096c;">
+          <img src="Images/harsh.jpg" alt="">
+          <h2>Harshavardhan S</h2>
+          <p class="role">Full Stack Developer and Database Architect</p>
+          <p style="font-weight: 800;">harshavardhan.cd22@bmsce.ac.in</p>
+          <a href="mailto:harshavardhan.cd22@bmsce.ac.in">Send Email</a>
+        </div>
+        <div class="card" style="--bc: #3e096c;--btn: #3e096c;">
+          <img src="Images/dan.jpg" alt="">
+          <h2>S Danush</h2>
+          <p class="role">UI/UX Designer and Full Stack Developer</p>
+          <p style="font-weight: 800;">danush.cd22@bmsce.ac.in</p>
+          <a href="mailto:danush.cd22@bmsce.ac.in">Send Email</a>
+        </div>
+        <div class="card" style="--bc: #3e096c;--btn: #3e096c;">
+          <img src="Images/suji.jpg" alt="">
+          <h2>Srujana A Rao</h2>
+          <p class="role">UI/UX Designer and Front-end Developer</p>
+          <p style="font-weight: 800;">srujana.cd22@bmsce.ac.in</p>
+          <a href="mailto:srujana.cd22@bmsce.ac.in">Send Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
