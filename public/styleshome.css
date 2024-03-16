@@ -146,6 +146,7 @@ svg{
     border: none;
     display: inline-block;
     float: right;
+    transition: transform 0.5s ease;
 }
 .process{
     height:600px;
