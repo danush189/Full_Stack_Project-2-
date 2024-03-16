@@ -91,7 +91,10 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirmPassword").value;
-
+            if(password.length<8){
+                document.getElementById("passwordMsg").innerText = "Passwords should be atleast 8 characters";
+                return;
+            }
             
             if (password !== confirmPassword) {
                 document.getElementById("confirmPasswordMsg").innerText = "Passwords do not match";
