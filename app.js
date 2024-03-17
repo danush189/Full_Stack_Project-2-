@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const port = 3000;
@@ -64,11 +65,16 @@ app.get('/check-username/:username', async (req, res) => {
   }
 });
 
+
+
 app.post('/submit-signup', async (req, res) => {
     try {
-        const { fullName,userName, email, password } = req.body;
-        const signUpData = new SignUpData({ fullName,userName, email, password });
+        const { fullName, userName, email, password } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10); 
+        const signUpData = new SignUpData({ fullName, userName, email, password: hashedPassword });
+    
         await signUpData.save();
+        
         res.send('Sign up data submitted successfully!');
     } catch (error) {
         console.error(error);
@@ -77,20 +83,27 @@ app.post('/submit-signup', async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const { userName, password } = req.body;
-
-  try {
-      const user = await SignUpData.findOne({ userName: userName.trim(), password }); // Trim whitespace from username
+    const { userName, password } = req.body;
+  
+    try {
+      const user = await SignUpData.findOne({ userName: userName.trim() });
+  
       if (user) {
+        const passwordMatch = await bcrypt.compare(password, user.password);
+  
+        if (passwordMatch) {
           res.json({ success: true });
+        } else {
+          res.json({ success: false, error: 'Incorrect password' });
+        }
       } else {
-          res.json({ success: false });
+        res.json({ success: false, error: 'User not found' });
       }
-  } catch (error) {
+    } catch (error) {
       console.error('Error:', error);
       res.status(500).json({ success: false, error: 'Server error' });
-  }
-});
+    }
+  });
 
 
 app.listen(port, () => {
